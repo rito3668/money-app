@@ -38,9 +38,9 @@ export default function Signup() {
                 onChange={(e)=>setDisplay(e.target.value)}
             />
         </label>
-        <button className='btn'>Signup</button>
-        {error&&<p>{error}</p>}
+        {!pending&&<button className='btn'>Signup</button>}
         {pending&&<button className='btn' disabled>loading...</button>}
+        {error&&<p>{error}</p>}
     </form>
   )
 }
