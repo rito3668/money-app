@@ -27,7 +27,7 @@ export const useLogOut =()=>{
         }
     }
     useEffect(()=>{
-        setIsCancelled(true)
-    })
+       return ()=> setIsCancelled(true)
+    },[])
     return {error,pending,logout}
 }
