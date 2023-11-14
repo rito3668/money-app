@@ -3,10 +3,14 @@ import { useState } from 'react'
 export default function TransactionForm() {
     const [name,setName] = useState('')
     const [amount,setAmount] = useState('')
+    const handleSubmit =(e)=>{
+        e.preventDefault()
+        console.log({name,amount})
+    }
     return (
     <>
         <h3>Add a Transaction</h3>
-        <form>
+        <form onSubmit={handleSubmit}>
             <label>
                 <span>Transaction Name:</span>
                 <input 
@@ -25,6 +29,7 @@ export default function TransactionForm() {
                     value={amount}
                 />    
             </label>    
+            <button>Add transaction</button>
         </form>  
     </>
   )

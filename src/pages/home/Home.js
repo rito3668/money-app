@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from './Home.module.css'
+import TransactionForm from './TransactionForm'
 export default function Home() {
   return (
     <div className={styles.container}>
@@ -7,7 +8,7 @@ export default function Home() {
         Transaction List
       </div>
       <div className={styles.sidebar}>
-        form
+        <TransactionForm/>
       </div>
     </div>
   )
