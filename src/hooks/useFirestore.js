@@ -19,11 +19,11 @@ export const useFirestore = (collection)=>{
     //getting a refernce to collection
     const ref = projectFirestore.collection(collection)
     //adding document
-    const addDocument = ()=>{
+    const addDocument = (doc)=>{
         
     }
     //deleting document
-    const delDocument =()=>{
+    const delDocument =(id)=>{
 
     }
 
