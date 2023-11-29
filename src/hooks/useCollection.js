@@ -1,13 +1,16 @@
 import { projectFirestore } from "../firebase/config"
 import { useState,useEffect } from "react"
-export const useCollection = (collection) =>{
+export const useCollection = (collection,_query) =>{
     const [documents,setDocuments] = useState(null)
     const [error,setError] = useState(null)
-
+    const query = useRef(_query).current 
 
 
     useEffect(()=>{
         let ref = projectFirestore.collection(collection)
+        if(query){
+            ref = ref.where(...query)
+        }
         const unsub = ref.onSnapshot((snapshot)=>{
             let results =[]
             snapshot.docs.forEach((doc)=>{
@@ -21,6 +24,6 @@ export const useCollection = (collection) =>{
         })
         
         return ()=>unsub()
-    },[collection])
+    },[collection,query])
     return {documents,error}
 }
