@@ -16,6 +16,7 @@ export default function Login() {
         <label>
             <span>email:</span>
             <input 
+                required
                 type="email" 
                 value={email}
                 onChange={(e=>setEmail(e.target.value))}
@@ -24,6 +25,7 @@ export default function Login() {
         <label>
             <span>password:</span>
             <input 
+                required
                 type="password" 
                 value={password}
                 onChange={(e)=>setPassword(e.target.value)}

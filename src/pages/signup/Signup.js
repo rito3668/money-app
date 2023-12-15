@@ -17,6 +17,7 @@ export default function Signup() {
         <label>
             <span>email:</span>
             <input 
+                required
                 type="email" 
                 value={email}
                 onChange={(e=>setEmail(e.target.value))}
@@ -25,6 +26,7 @@ export default function Signup() {
         <label>
             <span>password:</span>
             <input 
+                required
                 type="password" 
                 value={password}
                 onChange={(e)=>setPassword(e.target.value)}
@@ -33,6 +35,7 @@ export default function Signup() {
         <label>
             <span>display name:</span>
             <input 
+                required
                 type="text" 
                 value={display}
                 onChange={(e)=>setDisplay(e.target.value)}
